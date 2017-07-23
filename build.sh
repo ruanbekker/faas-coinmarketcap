@@ -1,3 +1,5 @@
 #!/bin/sh
 
-docker build -t functions/base:python-2.7-alpine .
+docker build -t rbekker87/faas_coinmarketcap .
+docker tag rbekker87/faas_coinmarketcap rbekker87/faas_coinmarketcap
+docker push rbekker87/faas_coinmarketcap
