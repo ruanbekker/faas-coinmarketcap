@@ -12,6 +12,13 @@ Functions as a Service (Serverless Framework for Docker)
 
 The function takes the data value that is passed via the POST request as standard input and uses it as the `market_name` that you are querying and makes a GET request on CoinMarketCap's API to retrieve the information of the market as passed.
 
+Getting the [Image](https://hub.docker.com/r/rbekker87/faas_coinmarketcap/)  and Running the Container:
+
+```
+$ docker pull rbekker87/faas_coinmarketcap
+$ docker run -itd --name faas_coinmarketcap --publish 8080:8080 rbekker87/faas_coinmarketcap
+```
+
 Passing `bitcoin` as the `market_name` value:
 
 ```
