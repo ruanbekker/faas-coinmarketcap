@@ -28,7 +28,6 @@ if __name__ == "__main__":
     market_name = get_stdin().split()[0]
     if market_name not in market_list:
         print('Market Name: ' + market_name + ' does not exist')
-        #exit(1)
     else:
         r = requests.get('https://api.coinmarketcap.com/v1/ticker/' + market_name + '/?convert=USD').content
         data = json.loads(r)[0]
