@@ -10,7 +10,9 @@ Functions as a Service (Serverless Framework for Docker)
 
 ## usage:
 
-The function takes the data value that is passed via the POST request as standard input and uses it as the market that you are querying and makes a GET request on CoinMarketCap's API to retrieve the information of the market as passed.
+The function takes the data value that is passed via the POST request as standard input and uses it as the `market_name` that you are querying and makes a GET request on CoinMarketCap's API to retrieve the information of the market as passed.
+
+Passing `bitcoin` as the `market_name` value:
 
 ```
 $ curl -XPOST http://localhost:8080/ -d "bitcoin"
@@ -30,4 +32,11 @@ $ curl -XPOST http://localhost:8080/ -d "bitcoin"
     "percent_change_24h": "-1.32",
     "id": "bitcoin"
 }
+```
+
+When passing a `market_name` which does not exist:
+
+```
+$ curl -XPOST http://localhost:8080/ -d "newcoin"
+Market Name: newcoin does not exist
 ```
